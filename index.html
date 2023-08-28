@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body style="margin: 0">
+    <div
+      id="overlay"
+      style="position: absolute; width: 100%; height: 100%"
+      onwheel="onWheel()"
+    ></div>
+    <iframe
+      src="https://programiz.pro"
+      width="100%"
+      height="500px"
+      title="description"
+    ></iframe>
+  </body>
+</html>
+
+<script>
+  let timeout;
+
+  function onWheel() {
+    clearTimeout(timeout);
+
+    document.getElementById("overlay").style.display = "none";
+
+    timeout = setTimeout(() => {
+      document.getElementById("overlay").style.display = "block";
+    }, 500);
+  }
+</script>
